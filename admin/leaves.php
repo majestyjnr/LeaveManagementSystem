@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Leave Requests - Leave Managemenr System</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/dataTables.bootstrap4.min.css">
@@ -18,31 +18,29 @@
 
 <body>
     <div class="main-wrapper">
-        <div class="header">
+    <div class="header">
 			<div class="header-left">
 				<a href="index-2.html" class="logo">
-					<img src="../assets/img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+					<img src="../assets/img/logo.png" width="35" height="35"  alt=""> <span>LMS</span>
 				</a>
 			</div>
-			
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
-                    <ul class="nav user-menu float-right">
+            <ul class="nav user-menu float-right">
              <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img">
 							<img class="rounded-circle" src="../assets/img/user.jpg" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<span>Admin</span>
+						<!-- <span>Admin</span> -->
                     </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="edit-profile.html">My Profile</a>
+						<a class="dropdown-item" href="profile.html">My Profile</a>
 						<a class="dropdown-item" href="login.html">Logout</a>
 					</div>
                 </li>
             </ul>
-           
         </div>
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
@@ -69,7 +67,7 @@
             <div class="content">
                 <div class="row">
                     <div class="col-sm-8 col-6">
-                        <h4 class="page-title">Leave Request</h4>
+                        <h4 class="page-title">Leave Requests</h4>
                     </div>
                     <div class="col-sm-4 col-6 text-right m-b-30">
                         <a href="add-leave.html" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Leave</a>
@@ -537,17 +535,17 @@
 		</div>
     </div>
     <div class="sidebar-overlay" data-reff=""></div>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/select2.min.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="../../js/data-table.js"></script>
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/js/jquery.slimscroll.js"></script>
+    <script src="../assets/js/select2.min.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/data-table.js"></script>
 </body>
 
 
