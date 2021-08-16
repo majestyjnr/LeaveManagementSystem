@@ -52,14 +52,14 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="menu-title">Main</li>
-                        <li class="active">
-                            <a href="admin-dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                        <li>
+                            <a href="admin-dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
-                            <a href="admins.html"><i class="fa fa-user-md"></i> <span></span>Admins</a>
+                            <a href="admins.php"><i class="fa fa-user-md"></i> <span></span>Admins</a>
                         </li>
-                        <li>
-                            <a href="employees.html"><i class="fa fa-user-md"></i> <span>Employees</span></a>
+                        <li class="active">
+                            <a href="employees.php"><i class="fa fa-user-md"></i> <span>Employees</span></a>
                         </li>
                     </ul>
                 </div>

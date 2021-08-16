@@ -18,7 +18,6 @@ if(isset($_POST['password'])&& isset($_POST['confirmPassword'])) {
     
 if($password != $confirmPassword){
     
-    
     echo "<script>
     
     alert('Password mismatch. please try again..');
@@ -41,7 +40,7 @@ if($password != $confirmPassword){
     
     alert('Registered successfully');
 
-    window.location.href='admin-dashboard.php';
+    window.location.href='employees.php';
 
   </script>";
   
@@ -72,10 +71,6 @@ if($password != $confirmPassword){
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -83,7 +78,7 @@ if($password != $confirmPassword){
     <div class="main-wrapper">
         <div class="header">
 			<div class="header-left">
-				<a href="index-2.html" class="logo">
+				<a href="dashboard.php" class="logo">
 					<img src="../assets/img/logo.png" width="35" height="35"  alt=""> <span>LMS</span>
 				</a>
 			</div>

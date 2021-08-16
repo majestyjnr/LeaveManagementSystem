@@ -14,10 +14,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -53,7 +49,7 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                     <li class="menu-title">Main</li>
-                        <li class="active">
+                        <li>
                             <a href="admin-dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
@@ -62,8 +58,8 @@
                         <li>
                             <a href="employees.php"><i class="fa fa-users"></i> <span>Employees</span></a>
                         </li>
-                        <li>
-                            <a href="all-leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
+                        <li class="active">
+                            <a href="leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
                         </li>
                     </ul>
                 </div>
