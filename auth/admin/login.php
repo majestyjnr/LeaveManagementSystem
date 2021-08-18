@@ -22,14 +22,14 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 $_SESSION['firstname'] = $firstname;
                 $_SESSION['email'] = $email;
             }
-            header('location: admin/dashboard.php');
+            header('location: ../../admin/dashboard.php');
         }else{
             
             echo "<script>
     
             alert('Invalid Credentials');
         
-            window.location.href='auth/admin_login.php';
+            window.location.href='login.php';
         
             </script>";
         }
