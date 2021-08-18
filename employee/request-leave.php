@@ -16,18 +16,18 @@
 <?php
 include "../db/connection.php";
 session_start();
+$name = $_SESSION['firstname'];
+$email = $_SESSION['email'];
 
 if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['startdate']) && isset($_POST['enddate']) && isset($_POST['reason'])){
-
-    $name = $_SESSION['firstname'];
-    $email = $_SESSION['email'];
+    
     $leavetype =  $_POST['leavetype'];
     $duration = $_POST['duration'];
     $startdate = $_POST['startdate'];
     $enddate = $_POST['enddate'];
     $reason = $_POST['reason'];
        
-    $query="INSERT INTO leaves (employeeName,employeeEmail,leaveType,startDate,endDate,duration,reason) values ('$name','$email','$leavetype','$duration','$startdate','$enddate','$reason')";
+    $query="INSERT INTO leaves (employeeName,employeeEmail,leaveType,startDate,endDate,duration,reason,status) values ('$name','$email','$leavetype','$duration','$startdate','$enddate','$reason', 'Pending')";
     
     $query_run = mysqli_query($link,$query);
 
@@ -71,7 +71,7 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
 							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<!-- <span>Admin</span> -->
+						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
@@ -87,7 +87,7 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
                     <ul>
                     <li class="menu-title">Main</li>
                         <li>
-                            <a href="emp-dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li class="active">
                             <a href="request-leave.php"><i class="fa fa-user-md"></i> <span>Request Leave</span></a>

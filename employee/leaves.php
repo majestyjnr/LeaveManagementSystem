@@ -13,7 +13,13 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
+<?php 
+include "../db/connection.php";
+session_start();
+$name = $_SESSION['firstname'];
+$email = $_SESSION['email'];
 
+?>
 <body>
     <div class="main-wrapper">
         <div class="header">
@@ -32,6 +38,7 @@
 							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
+                        <span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
@@ -128,24 +135,55 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+<?php
+// Specify the query to execute
+$query = "SELECT * FROM leaves WHERE `employeeEmail` ='$email'";
+
+// Execute query
+$query_run = mysqli_query($link, $query);
+
+// Loop through each records 
+while($row = mysqli_fetch_array($query_run)){
+
+    $id = $row['id'];
+    $employeeName = $row['employeeName'];
+    $employeeEmail = $row['employeeEmail'];
+    $leaveType = $row['leaveType'];
+    $startDate = $row['startDate'];
+    $endDate = $row['endDate'];
+    $duration = $row['duration'];
+    $reason = $row['reason'];
+    $status = $row['status'];
+
+?>
                                     <tr>
-                                        <td>Casual Leave</td>
-                                        <td>8 Aug 2018</td>
-                                        <td>8 Aug 2018</td>
-                                        <td>2 days</td>
-                                        <td>Family Function</td>
+                                        <td><?php echo $leaveType ?></td>
+                                        <td><?php echo $startDate ?></td>
+                                        <td><?php echo $endDate ?></td>
+                                        <td><?php echo $duration ?> days</td>
+                                        <td><?php echo $reason ?></td>
                                         <td class="text-center">
-                                            <div class="dropdown action-label">
-                                                <a class="custom-badge status-purple dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    New
+                                            <?php
+                                                if($status == 'Pending'){
+                                            ?>
+                                                <a class="custom-badge status-purple" >
+                                                    Pending
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">New</a>
-                                                    <a class="dropdown-item" href="#">Pending</a>
-                                                    <a class="dropdown-item" href="#">Approved</a>
-                                                    <a class="dropdown-item" href="#">Declined</a>
-                                                </div>
-                                            </div>
+                                            <?php
+
+                                                } else if($status == 'Declined'){
+
+                                            ?>
+                                                <a class="custom-badge status-purple" >
+                                                    Declined
+                                                </a>
+                                            <?php
+
+                                                } else if(){
+
+                                                }
+                                            ?>
+                                                
                                         </td>
                                         <td class="text-right">
                                             <div class="dropdown dropdown-action">
@@ -157,6 +195,9 @@
                                             </div>
                                         </td>
                                     </tr>
+<?php
+}
+?>
                                 </tbody>
                             </table>
                         </div>

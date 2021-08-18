@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-    <title>Leave Management System | Employee</title>
+    <title>Dashboard | Majesty Corporation LMS</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
@@ -19,6 +19,7 @@ include "../db/connection.php";
 session_start();
 $name = $_SESSION['firstname'];
 $email = $_SESSION['email'];
+
 
 ?>
 
@@ -55,7 +56,7 @@ $email = $_SESSION['email'];
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="emp-dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
                             <a href="request-leave.php"><i class="fa fa-user-md"></i> <span>Request Leave</span></a>
@@ -74,35 +75,68 @@ $email = $_SESSION['email'];
                         <h4 class="page-title">Welcome <span style="color: blue"><?php echo $name ?></span>!</h4>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
                         <div class="dash-widget">
-							<span class="dash-widget-bg1"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+							<span class="dash-widget-bg1"><i class="fa fa-table" aria-hidden="true"></i></span>
 							<div class="dash-widget-info text-right">
-								<h3>98</h3>
+                                <?php 
+                                // GET Approved REQUESTS
+                                $query = "SELECT status FROM leaves WHERE `employeeEmail` ='$email' and `status` = 'Approved'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $ApprovedTotal = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $ApprovedTotal ?></h3>
+								
 								<span class="widget-title1">Approved Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
 							</div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
                         <div class="dash-widget">
-                            <span class="dash-widget-bg2"><i class="fa fa-user-o"></i></span>
+                            <span class="dash-widget-bg2"><i class="fa fa-table"></i></span>
                             <div class="dash-widget-info text-right">
-                                <h3>1072</h3>
+                                <?php 
+                                // GET Approved REQUESTS
+                                $query = "SELECT status FROM leaves WHERE `employeeEmail` ='$email' and `status` = 'Declined'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $declinedTotal = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $declinedTotal ?></h3>
                                 <span class="widget-title2">Declined Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
                         <div class="dash-widget">
-                            <span class="dash-widget-bg3"><i class="fa fa-user-md" aria-hidden="true"></i></span>
+                            <span class="dash-widget-bg3"><i class="fa fa-table" aria-hidden="true"></i></span>
                             <div class="dash-widget-info text-right">
-                                <h3>72</h3>
+                                <?php 
+                                // GET All Leaves
+                                $query = "SELECT * FROM leaves WHERE `employeeEmail` ='$email'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $AllLeaves = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $AllLeaves ?></h3>
                                 <span class="widget-title3">All Leave Requests <i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <center>
                 <img src="../assets/img/mj.jpg" alt="" width="80%">
                 </center>
