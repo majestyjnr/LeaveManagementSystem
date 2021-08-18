@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- add-leave24:07-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-    <title>Leave Management System | Employee</title>
+    <title>Request Leave | Majesty Corporation LMS</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
@@ -48,10 +46,10 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                     <li class="menu-title">Main</li>
-                        <li class="active">
+                        <li>
                             <a href="emp-dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
-						<li>
+						<li class="active">
                             <a href="request-leave.php"><i class="fa fa-user-md"></i> <span>Request Leave</span></a>
                         </li>
                         <li>

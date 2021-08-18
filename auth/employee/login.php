@@ -4,7 +4,7 @@ session_start();
 
 
 if(isset($_POST['email']) && isset($_POST['password'])){
-    $username =  $_POST['email'];
+    $email =  $_POST['email'];
     $password = $_POST['password'];
        
         //Query The Database
@@ -16,14 +16,14 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             while($row = mysqli_fetch_assoc($query_run)){
                 $username = $row['username'];
                 $firstname = $row['firstname'];
-                $email = $row['e-mail'];
+                $email = $row['email'];
 
                 $_SESSION['username'] = $username;
                 $_SESSION['firstname'] = $firstname;
                 $_SESSION['email'] = $email;
             }
 
-            header('location: ../../employee/emp-dashboard.php');
+            header('location: ../../employee/dashboard.php');
 
         }else{
             
@@ -31,7 +31,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     
             alert('Invalid Credentials');
         
-            window.location.href='../../auth/employee_login.php';
+            window.location.href='login.php';
         
             </script>";
         }

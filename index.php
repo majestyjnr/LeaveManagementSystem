@@ -8,10 +8,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
-    <div class="main-wrapper error-wrapper">
+    <div class="main-wrapper account-wrapper mt-4">
         <div class="error-box">
             <img src="assets/img/mj.jpg" alt="" width="60%">
             <h3 class="mt-4"><i class="fa fa-password"></i>Leave Management System</h3>
