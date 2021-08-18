@@ -27,7 +27,7 @@ $email = $_SESSION['email'];
     <div class="main-wrapper">
         <div class="header">
 			<div class="header-left">
-				<a href="index-2.html" class="logo">
+				<a href="dashboard.php" class="logo">
 					<img src="../assets/img/logo.png" width="35" height="35"  alt=""> <span>LMS</span>
 				</a>
 			</div>
@@ -43,8 +43,8 @@ $email = $_SESSION['email'];
 						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.html">My Profile</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="profile.php">My Profile</a>
+						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
             </ul>
