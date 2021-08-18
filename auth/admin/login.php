@@ -8,7 +8,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     $password = $_POST['password'];
        
         //Query The Database
-        $query = "SELECT id FROM admins WHERE `email` = '$email' and `password` = '$password'";
+        $query = "SELECT * FROM admins WHERE `email` = '$email' and `password` = '$password'";
         $query_run = mysqli_query($link, $query);
         $query_num_rows = mysqli_num_rows($query_run);
 

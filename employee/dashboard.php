@@ -14,6 +14,13 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     
 </head>
+<?php 
+include "../db/connection.php";
+session_start();
+$name = $_SESSION['firstname'];
+$email = $_SESSION['email'];
+
+?>
 
 <body>
     <div class="main-wrapper">
@@ -32,7 +39,7 @@
 							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<!-- <span>Admin</span> -->
+						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
@@ -58,6 +65,47 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                     <div class="col-sm-8 col-6">
+                        <h4 class="page-title">Welcome <span style="color: blue"><?php echo $name ?></span>!</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+							<span class="dash-widget-bg1"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+							<div class="dash-widget-info text-right">
+								<h3>98</h3>
+								<span class="widget-title1">Approved Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg2"><i class="fa fa-user-o"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>1072</h3>
+                                <span class="widget-title2">Declined Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg3"><i class="fa fa-user-md" aria-hidden="true"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <h3>72</h3>
+                                <span class="widget-title3">All Leave Requests <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <center>
+                <img src="../assets/img/mj.jpg" alt="" width="80%">
+                </center>
             </div>
         </div>
     	

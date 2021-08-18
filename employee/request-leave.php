@@ -20,7 +20,7 @@ session_start();
 if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['startdate']) && isset($_POST['enddate']) && isset($_POST['reason'])){
 
     $name = $_SESSION['firstname'];
-    $_SESSION['email'];
+    $email = $_SESSION['email'];
     $leavetype =  $_POST['leavetype'];
     $duration = $_POST['duration'];
     $startdate = $_POST['startdate'];
@@ -102,8 +102,8 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
     	<div class="page-wrapper">
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <h4 class="page-title">Request Leave</h4>
+                     <div class="col-sm-8 col-6">
+                        <h4 class="page-title">Leave Request</h4>
                     </div>
                 </div>
                 <div class="row">
