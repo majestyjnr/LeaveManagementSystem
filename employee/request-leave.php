@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 
+<?php
+
+
+?>
 <body>
     <div class="main-wrapper">
         <div class="header">
