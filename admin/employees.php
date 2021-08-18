@@ -20,7 +20,7 @@
     <div class="main-wrapper">
         <div class="header">
 			<div class="header-left">
-				<a href="index-2.html" class="logo">
+				<a href="dashboard.php" class="logo">
 					<img src="../assets/img/logo.png" width="35" height="35"  alt=""> <span>LMS</span>
 				</a>
 			</div>
@@ -48,7 +48,7 @@
                     <ul>
                     <li class="menu-title">Main</li>
                         <li>
-                            <a href="admin-dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
                             <a href="admins.php"><i class="fa fa-users"></i> <span></span>Admins</a>
