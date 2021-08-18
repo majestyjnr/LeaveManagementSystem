@@ -100,13 +100,13 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Number of days <span class="text-danger">*</span></label>
-										<input class="form-control" readonly="" type="text">
+										<input class="form-control" type="number">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Remaining Leaves <span class="text-danger">*</span></label>
-										<input class="form-control" readonly="" value="12" type="text">
+										<input class="form-control" value="12" type="text">
 									</div>
 								</div>
 							</div>
