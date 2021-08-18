@@ -89,31 +89,49 @@ $email = $_SESSION['email'];
                                     </div>
                                 </div>
                                 <div class="profile-basic">
+                                <?php
+                                // Specify the query to execute
+                                $query = "SELECT * FROM employees WHERE `email` ='$email'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                // Loop through each records 
+                                $row = mysqli_fetch_assoc($query_run);
+
+                                $id = $row['id'];
+                                $firstname = $row['firstname'];
+                                $lastname = $row['lastname'];
+                                $email = $row['email'];
+                                $username = $row['username'];
+                                $phone = $row['phone'];
+                                ?>
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
-                                                <h3 class="user-name m-t-0 mb-0">Cristina Groves</h3>
+                                                <h3 class="user-name m-t-0 mb-0"><?php echo $firstname.' '.$lastname ?></h3>
                                                 <small class="text-muted">Staff</small>
-                                                <div class="staff-id">Employee ID : DR-0001</div>
+                                                <div class="staff-id">Employee ID : E-000<?php echo $id ?></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <ul class="personal-info">
                                                 <li>
-                                                    <span class="title">Phone:</span>
-                                                    <span class="text"><a href="#">770-889-6484</a></span>
+                                                    <span class="title">Username:</span>
+                                                    <span class="text"><a href="#"><?php echo $username ?></a></span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Email:</span>
-                                                    <span class="text"><a href="#">cristinagroves@example.com</a></span>
+                                                    <span class="text"><a href="#"><?php echo $email ?></a></span>
                                                 </li>
                                                 <li>
-                                                    <span class="title">Birthday:</span>
-                                                    <span class="text">3rd March</span>
+                                                    <span class="title">Phone:</span>
+                                                    <span class="text"><?php echo $phone ?></span>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>                        
                         </div>
