@@ -59,7 +59,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         <div class="account-page">
 			<div class="account-center">
 				<div class="account-box">
-                    <form action=" " method="POST" class="form-signin">
+                    <form action="" method="POST" class="form-signin">
                         <div class="account-logo">
                             <a href="../../index.php"><img src="../../assets/img/mj.jpg" alt=""></a>
                             <h3 class="mt-3">Employee Login</h3>

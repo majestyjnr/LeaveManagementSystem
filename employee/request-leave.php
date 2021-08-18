@@ -14,7 +14,38 @@
 </head>
 
 <?php
+include "../db/connection.php";
+session_start();
 
+if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['startdate']) && isset($_POST['enddate']) && isset($_POST['reason'])){
+
+    $name = $_SESSION['firstname'];
+    $email = $_SESSION['email'];
+    $leavetype =  $_POST['leavetype'];
+    $duration = $_POST['duration'];
+    $startdate = $_POST['startdate'];
+    $enddate = $_POST['enddate'];
+    $reason = $_POST['reason'];
+       
+    $query="INSERT INTO leaves (employeeName,employeeEmail,leaveType,startDate,endDate,duration,reason) values ('$name','$email','$leavetype','$duration','$startdate','$enddate','$reason')";
+    
+    $query_run = mysqli_query($link,$query);
+
+    if ($query_run) {
+        
+        echo "<script>
+    
+        alert('Leave Request Submitted Successfully');
+
+        window.location.href='dashboard.php';
+
+        </script>";
+
+    }else{
+        echo 'Error registering. Please try again.';
+    }
+
+}
 
 ?>
 <body>
@@ -71,16 +102,15 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                        <form method="POST">
                             <div class="row">
 								<div class="col-md-6">
                                     <div class="form-group">
                                         <label>Leave Type <span class="text-danger">*</span></label>
                                         <select class="select" name="leavetype">
-                                            <option>Select Leave Type</option>
-                                            <option>Casual Leave 12 Days</option>
-                                            <option>Medical Leave</option>
-                                            <option>Loss of Pay</option>
+                                            <option value="notspecified">Select Leave Type</option>
+                                            <option value="Casual Leave">Casual Leave</option>
+                                            <option value="Medical leave">Medical Leave</option>
                                         </select>
                                     </div>
                                 </div>
