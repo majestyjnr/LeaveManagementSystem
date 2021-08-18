@@ -1,37 +1,35 @@
 <?php
-include "../db/connection.php";
+include "../../db/connection.php";
 session_start();
 
 
-if(isset($_POST['username']) && isset($_POST['password'])){
-    $username =  $_POST['username'];
+if(isset($_POST['email']) && isset($_POST['password'])){
+    $email =  $_POST['email'];
     $password = $_POST['password'];
        
         //Query The Database
-        $query = "SELECT id FROM admins WHERE `username` = '$username' and `password` = '$password'";
+        $query = "SELECT id FROM admins WHERE `email` = '$email' and `password` = '$password'";
         $query_run = mysqli_query($link, $query);
         $query_num_rows = mysqli_num_rows($query_run);
 
         if($query_num_rows == 1){
             while($row = mysqli_fetch_assoc($query_run)){
-                $username = $row['username'];
+                $email = $row['email'];
                 $firstname = $row['firstname'];
-                $email = $row['e-mail'];
+        
 
                 $_SESSION['username'] = $username;
                 $_SESSION['firstname'] = $firstname;
                 $_SESSION['email'] = $email;
             }
-
-            header('location: ../admin/admin-dashboard.php');
-
+            header('location: admin/dashboard.php');
         }else{
             
             echo "<script>
     
             alert('Invalid Credentials');
         
-            window.location.href='../auth/admin_login.php';
+            window.location.href='auth/admin_login.php';
         
             </script>";
         }
@@ -50,11 +48,11 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favi.jpg">
+    <title>Admin | Majesty Corporation LMS</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 </head>
 
 <body>
@@ -64,11 +62,12 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 				<div class="account-box">
                     <form action="" method="POST" class="form-signin">
 						<div class="account-logo">
-                            <a href="index-2.html"><img src="../assets/img/logo-dark.png" alt=""></a>
+                            <a href="../../index.php"><img src="../../assets/img/mj.jpg" alt=""></a>
+                            <h3 class="mt-3">Admin Login</h3>
                         </div>
                         <div class="form-group">
-                            <label>Username or Email</label>
-                            <input type="text" autofocus=""  name="username" class="form-control" required>
+                            <label>Email</label>
+                            <input type="email" autofocus name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
@@ -80,20 +79,18 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary account-btn">Login</button>
                         </div>
-                        <!-- <div class="text-center register-link">
-                            Don’t have an account? <a href="register.html">Register Now</a>
-                        </div> -->
+                        <div class="text-center register-link">
+                            <a href="../../index.php">Back to Home</a>
+                        </div>
                     </form>
                 </div>
 			</div>
         </div>
     </div>
-    <script src="../assets/js/jquery-3.2.1.min.js"></script>
-	<script src="../assets/js/popper.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/app.js"></script>
+    <script src="../../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/app.js"></script>
 </body>
 
-
-<!-- login23:12-->
 </html>
