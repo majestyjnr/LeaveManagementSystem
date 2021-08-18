@@ -79,7 +79,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                             <button type="submit" class="btn btn-primary account-btn">Login</button>
                         </div>
                         <div class="text-center register-link">
-                            <a href="../../index.php">Back to Login</a>
+                            <a href="../../index.php">Back to Home</a>
                         </div>
                     </form>
                 </div>
