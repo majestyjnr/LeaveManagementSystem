@@ -20,7 +20,7 @@ session_start();
 if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['startdate']) && isset($_POST['enddate']) && isset($_POST['reason'])){
 
     $name = $_SESSION['firstname'];
-    $email = $_SESSION['email'];
+    $_SESSION['email'];
     $leavetype =  $_POST['leavetype'];
     $duration = $_POST['duration'];
     $startdate = $_POST['startdate'];
@@ -42,7 +42,13 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
         </script>";
 
     }else{
-        echo 'Error registering. Please try again.';
+        echo "<script>
+    
+        alert('Error submitting data');
+
+        window.location.href='request-leave.php';
+
+        </script>";
     }
 
 }
