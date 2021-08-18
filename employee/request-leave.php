@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    
 </head>
 
 <body>
@@ -28,7 +27,7 @@
              <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img">
-							<img class="rounded-circle" src="../assets/img/user.jpg" width="24" alt="Admin">
+							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
 						<!-- <span>Admin</span> -->
@@ -69,21 +68,31 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <form>
-                            <div class="form-group">
-                                <label>Leave Type <span class="text-danger">*</span></label>
-                                <select class="select">
-                                    <option>Select Leave Type</option>
-                                    <option>Casual Leave 12 Days</option>
-                                    <option>Medical Leave</option>
-                                    <option>Loss of Pay</option>
-                                </select>
+                            <div class="row">
+								<div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Leave Type <span class="text-danger">*</span></label>
+                                        <select class="select" name="leavetype">
+                                            <option>Select Leave Type</option>
+                                            <option>Casual Leave 12 Days</option>
+                                            <option>Medical Leave</option>
+                                            <option>Loss of Pay</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Number of days <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="number" name="duration">
+                                    </div>
+                                </div>
                             </div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>From <span class="text-danger">*</span></label>
 										<div class="cal-icon">
-											<input class="form-control datetimepicker" type="text">
+											<input class="form-control datetimepicker" type="text" name="startdate">
 										</div>
 									</div>
 								</div>
@@ -91,31 +100,17 @@
 									<div class="form-group">
 										<label>To <span class="text-danger">*</span></label>
 										<div class="cal-icon">
-											<input class="form-control datetimepicker" type="text">
+											<input class="form-control datetimepicker" type="text" name="enddate">
 										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Number of days <span class="text-danger">*</span></label>
-										<input class="form-control" type="number">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Remaining Leaves <span class="text-danger">*</span></label>
-										<input class="form-control" value="12" type="text">
 									</div>
 								</div>
 							</div>
                             <div class="form-group">
                                 <label>Leave Reason <span class="text-danger">*</span></label>
-                                <textarea rows="4" cols="5" class="form-control"></textarea>
+                                <textarea rows="4" cols="5" class="form-control" name="reason"></textarea>
                             </div>
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Send Leave Request</button>
+                                <button class="btn btn-primary submit-btn">Submit Leave Request</button>
                             </div>
                         </form>
                     </div>
