@@ -18,9 +18,9 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 $firstname = $row['firstname'];
         
 
-                $_SESSION['username'] = $username;
-                $_SESSION['firstname'] = $firstname;
-                $_SESSION['email'] = $email;
+                $_SESSION['adminusername'] = $username;
+                $_SESSION['adminfirstname'] = $firstname;
+                $_SESSION['adminemail'] = $email;
             }
             header('location: ../../admin/dashboard.php');
         }else{
