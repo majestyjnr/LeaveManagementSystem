@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
     <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
@@ -112,7 +112,7 @@ $email = $_SESSION['adminemail'];
                 <div class="row">
                     <div class="col-md-12">
 						<div class="table-responsive">
-                            <table class="table table-striped custom-table">
+                            <table class="table table-striped custom-table mb-0 datatable">
                                 <thead>
                                     <tr>
                                         <th style="min-width:200px;">Name</th>
@@ -124,6 +124,7 @@ $email = $_SESSION['adminemail'];
                                         <th class="text-right">Action</th>
                                     </tr>
                                 </thead>
+                                <tbody>
                                 <?php
 include "../db/connection.php";
 // Specify the query to execute
@@ -145,7 +146,7 @@ while($row = mysqli_fetch_array($query_run)){
     $role = $row['role'];
 
 ?>
-                                <tbody>
+ 
                                     <tr>
                                         <td>
 											<img width="28" height="28" src="../assets/img/acc-black.png" class="rounded-circle" alt=""> <h2><h2><?php echo $firstname . ' ' . $lastname ?></h2>
@@ -167,10 +168,10 @@ while($row = mysqli_fetch_array($query_run)){
                                             </div>
                                         </td>
                                     </tr>
-                                </tbody>
+                              
 <?php
 }
-?>
+?>                              </tbody>
                             </table>
 						</div>
                     </div>
