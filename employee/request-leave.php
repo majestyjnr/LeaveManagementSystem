@@ -27,7 +27,7 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
     $enddate = $_POST['enddate'];
     $reason = $_POST['reason'];
        
-    $query="INSERT INTO leaves (employeeName,employeeEmail,leaveType,startDate,endDate,duration,reason,status) values ('$name','$email','$leavetype','$duration','$startdate','$enddate','$reason', 'Pending')";
+    $query="INSERT INTO leaves (employeeName,employeeEmail,leaveType,startDate,endDate,duration,reason,status) values ('$name','$email','$leavetype','$startdate','$enddate','$duration','$reason', 'Pending')";
     
     $query_run = mysqli_query($link,$query);
 

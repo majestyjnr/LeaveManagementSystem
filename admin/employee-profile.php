@@ -3,8 +3,9 @@
 <?php 
 include "../db/connection.php";
 session_start();
-$name = $_SESSION['firstname'];
-// $adminemail = $_SESSION['email'];
+
+$name = $_SESSION['adminfirstname'];
+$adminemail = $_SESSION['adminemail'];
 
 $employeeEmail = $_GET['id'];
 
@@ -56,7 +57,7 @@ $phone = $row['phone'];
 							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<!-- <span><?php  ?></span> -->
+						<span><?php echo $adminemail ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.php">My Profile</a>
@@ -91,7 +92,7 @@ $phone = $row['phone'];
             <div class="content">
             <div class="row">
                     <div class="col-sm-7 col-6">
-                        <h4 class="page-title">My Profile</h4>
+                        <h4 class="page-title">Staff Profile</h4>
                     </div>
 
                     <div class="col-sm-5 col-6 text-right m-b-30">
@@ -113,7 +114,7 @@ $phone = $row['phone'];
                                             <div class="profile-info-left">
                                                 <h3 class="user-name m-t-0 mb-0"><?php echo $firstname.' '.$lastname ?></h3>
                                                 <small class="text-muted">Staff</small>
-                                                <div class="staff-id">Employee ID : E-000<?php echo $id ?></div>
+                                                <div class="staff-id">ID : E-000<?php echo $id ?></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
