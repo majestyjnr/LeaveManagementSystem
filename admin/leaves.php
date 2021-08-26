@@ -15,6 +15,12 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
+<?php 
+include "../db/connection.php";
+session_start();
+$name = $_SESSION['adminfirstname'];
+$email = $_SESSION['adminemail'];
+?>
 
 <body>
     <div class="main-wrapper">
@@ -30,10 +36,10 @@
              <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img">
-							<img class="rounded-circle" src="../assets/img/user.jpg" width="24" alt="Admin">
+							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<!-- <span>Admin</span> -->
+						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
@@ -68,9 +74,6 @@
                 <div class="row">
                     <div class="col-sm-8 col-6">
                         <h4 class="page-title">Leave Requests</h4>
-                    </div>
-                    <div class="col-sm-4 col-6 text-right m-b-30">
-                        <a href="add-leave.html" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Leave</a>
                     </div>
                 </div>
                 <div class="row filter-row">
@@ -139,127 +142,63 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+// Specify the query to execute
+$query = "SELECT * FROM leaves";
+
+// Execute query
+$query_run = mysqli_query($link, $query);
+
+// Loop through each records 
+while($row = mysqli_fetch_array($query_run)){
+
+    $id = $row['id'];
+    $employeeName = $row['employeeName'];
+    $employeeEmail = $row['employeeEmail'];
+    $leaveType = $row['leaveType'];
+    $startDate = $row['startDate'];
+    $endDate = $row['endDate'];
+    $duration = $row['duration'];
+    $reason = $row['reason'];
+    $status = $row['status'];
+
+?>
                                     <tr>
-                                        <td>
-                                            <a href="profile.html" class="avatar">R</a>
-                                            <h2><a href="#">Albina Simonis <span>Nurse</span></a></h2>
+                                        <td><a href="profile.html"><img width="28" height="28" src="../assets/img/acc-black.png" class="rounded-circle" alt=""></a>
+                                                <h2><a><?php echo $employeeName ?><span><?php echo $employeeEmail ?></span></a>
+                                            </h2>
                                         </td>
-                                        <td>Casual Leave</td>
-                                        <td>8 Aug 2018</td>
-                                        <td>8 Aug 2018</td>
-                                        <td>2 days</td>
-                                        <td>Family Function</td>
+                                        <td><?php echo $leaveType ?></td>
+                                        <td><?php echo $startDate ?></td>
+                                        <td><?php echo $endDate ?></td>
+                                        <td><?php echo $duration ?> days</td>
+                                        <td><?php echo $reason ?></td>
                                         <td class="text-center">
-                                            <div class="dropdown action-label">
-                                                <a class="custom-badge status-purple dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    New
+                                            <?php
+                                                if($status == 'Pending'){
+                                            ?>
+                                                <a class="custom-badge status-blue" >
+                                                    Pending
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">New</a>
-                                                    <a class="dropdown-item" href="#">Pending</a>
-                                                    <a class="dropdown-item" href="#">Approved</a>
-                                                    <a class="dropdown-item" href="#">Declined</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="profile.html" class="avatar">J</a>
-                                            <h2><a>	Cristina Groves  <span>Doctor</span></a></h2>
-                                        </td>
-                                        <td>Medical Leave</td>
-                                        <td>13 Jul 2018</td>
-                                        <td>15 Jul 2018</td>
-                                        <td>3 days</td>
-                                        <td>Going to Vacation</td>
-                                        <td class="text-center">
-                                            <div class="dropdown action-label">
-                                                <a class="custom-badge status-green dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    Approved
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">New</a>
-                                                    <a class="dropdown-item" href="#">Pending</a>
-                                                    <a class="dropdown-item" href="#">Approved</a>
-                                                    <a class="dropdown-item" href="#">Declined</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="profile.html" class="avatar">J</a>
-                                            <h2><a>Mary Mericle <span>Accountant</span></a></h2>
-                                        </td>
-                                        <td>Casual Leave</td>
-                                        <td>27 Jun 2018</td>
-                                        <td>28 Jun 2018</td>
-                                        <td>2 days</td>
-                                        <td>Going to Native Place</td>
-                                        <td class="text-center">
-                                            <div class="dropdown action-label">
-                                                <a class="custom-badge status-green dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    Approved
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">New</a>
-                                                    <a class="dropdown-item" href="#">Pending</a>
-                                                    <a class="dropdown-item" href="#">Approved</a>
-                                                    <a class="dropdown-item" href="#">Declined</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="profile.html" class="avatar">H</a>
-                                            <h2><a>Haylie Feeney  <span>Laboratorist</span></a></h2>
-                                        </td>
-                                        <td>Casual Leave</td>
-                                        <td>13 May 2018</td>
-                                        <td>13 May 2018</td>
-                                        <td>2 days</td>
-                                        <td>Not feeling well</td>
-                                        <td class="text-center">
-                                            <div class="dropdown action-label">
-                                                <a class="custom-badge status-red dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                            <?php
+
+                                                } else if($status == 'Declined'){
+
+                                            ?>
+                                                <a class="custom-badge status-red" >
                                                     Declined
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">New</a>
-                                                    <a class="dropdown-item" href="#">Pending</a>
-                                                    <a class="dropdown-item" href="#">Approved</a>
-                                                    <a class="dropdown-item" href="#">Declined</a>
-                                                </div>
-                                            </div>
+                                            <?php
+
+                                                } else if($status == 'Approved'){
+                                            ?>
+                                                    <a class="custom-badge status-green" >
+                                                        Declined
+                                                    </a>
+                                            <?php
+
+                                                }
+                                            ?>
                                         </td>
                                         <td class="text-right">
                                             <div class="dropdown dropdown-action">
@@ -271,39 +210,9 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="profile.html" class="avatar">R</a>
-                                            <h2><a>Zoe Butler <span>Pharmacist</span></a></h2>
-                                        </td>
-                                        <td>Casual Leave</td>
-                                        <td>31 Mar 2018</td>
-                                        <td>31 Mar 2018</td>
-                                        <td>2 days</td>
-                                        <td>Birthday Function</td>
-                                        <td class="text-center">
-                                            <div class="dropdown action-label">
-                                                <a class="custom-badge status-purple dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    New
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">New</a>
-                                                    <a class="dropdown-item" href="#">Pending</a>
-                                                    <a class="dropdown-item" href="#">Approved</a>
-                                                    <a class="dropdown-item" href="#">Declined</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+<?php
+}
+?>
                                 </tbody>
                             </table>
                         </div>

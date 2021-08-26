@@ -1,6 +1,9 @@
 
 <?php
 include "../db/connection.php";
+session_start();
+$name = $_SESSION['adminfirstname'];
+$email = $_SESSION['adminemail'];
 
 
 
@@ -88,10 +91,10 @@ if($password != $confirmPassword){
              <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img">
-							<img class="rounded-circle" src="../assets/img/user.jpg" width="24" alt="Admin">
+							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<!-- <span>Admin</span> -->
+						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="edit-profile.html">My Profile</a>

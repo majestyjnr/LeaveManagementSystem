@@ -14,6 +14,12 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
+<?php 
+include "../db/connection.php";
+session_start();
+$name = $_SESSION['adminfirstname'];
+$email = $_SESSION['adminemail'];
+?>
 
 <body>
     <div class="main-wrapper">
@@ -32,7 +38,7 @@
 							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<!-- <span>Admin</span> -->
+						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="edit-profile.html">My Profile</a>
