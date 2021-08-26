@@ -41,8 +41,8 @@ $email = $_SESSION['adminemail'];
 						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="edit-profile.html">My Profile</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="profile.php">My Profile</a>
+						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
             </ul>
@@ -160,7 +160,7 @@ while($row = mysqli_fetch_array($query_run)){
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-employee.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="edit-employee.php"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                 </div>
                                             </div>

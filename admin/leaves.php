@@ -42,8 +42,8 @@ $email = $_SESSION['adminemail'];
 						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.html">My Profile</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="profile.php">My Profile</a>
+						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
             </ul>
@@ -164,7 +164,7 @@ while($row = mysqli_fetch_array($query_run)){
 
 ?>
                                     <tr>
-                                        <td><a href="profile.html"><img width="28" height="28" src="../assets/img/acc-black.png" class="rounded-circle" alt=""></a>
+                                        <td><a href="profile.php"><img width="28" height="28" src="../assets/img/acc-black.png" class="rounded-circle" alt=""></a>
                                                 <h2><a><?php echo $employeeName ?><span><?php echo $employeeEmail ?></span></a>
                                             </h2>
                                         </td>
@@ -204,7 +204,7 @@ while($row = mysqli_fetch_array($query_run)){
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="edit-leave.php"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                                     <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@ while($row = mysqli_fetch_array($query_run)){
                     <div class="drop-scroll msg-list-scroll" id="msg_list">
                         <ul class="list-box">
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">R</span>
@@ -242,7 +242,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item new-message">
                                         <div class="list-left">
                                             <span class="avatar">J</span>
@@ -257,7 +257,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">T</span>
@@ -272,7 +272,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">M</span>
@@ -287,7 +287,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">C</span>
@@ -302,7 +302,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">D</span>
@@ -317,7 +317,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">B</span>
@@ -332,7 +332,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">R</span>
@@ -347,7 +347,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">C</span>
@@ -362,7 +362,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">M</span>
@@ -377,7 +377,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">J</span>
@@ -392,7 +392,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">L</span>
@@ -407,7 +407,7 @@ while($row = mysqli_fetch_array($query_run)){
                                 </a>
                             </li>
                             <li>
-                                <a href="chat.html">
+                                <a href="chat.php">
                                     <div class="list-item">
                                         <div class="list-left">
                                             <span class="avatar">T</span>
@@ -424,7 +424,7 @@ while($row = mysqli_fetch_array($query_run)){
                         </ul>
                     </div>
                     <div class="topnav-dropdown-footer">
-                        <a href="chat.html">See all messages</a>
+                        <a href="chat.php">See all messages</a>
                     </div>
                 </div>
             </div>

@@ -42,8 +42,8 @@ $email = $_SESSION['adminemail'];
 						<span><?php echo $email ?></span>
                     </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="edit-profile.html">My Profile</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="profile.php">My Profile</a>
+						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
             </ul>
@@ -64,7 +64,7 @@ $email = $_SESSION['adminemail'];
                             <a href="employees.php"><i class="fa fa-users"></i> <span>Employees</span></a>
                         </li>
                         <li>
-                            <a href="all-leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
+                            <a href="leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
                         </li>
                     </ul>
                 </div>
