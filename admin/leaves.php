@@ -164,7 +164,7 @@ while($row = mysqli_fetch_array($query_run)){
 
 ?>
                                     <tr>
-                                        <td><a href="profile.php"><img width="28" height="28" src="../assets/img/acc-black.png" class="rounded-circle" alt=""></a>
+                                        <td><a href="employee-profile.php?id=<?php echo $employeeEmail ?>"><img width="28" height="28" src="../assets/img/acc-black.png" class="rounded-circle" alt=""></a>
                                                 <h2><a><?php echo $employeeName ?><span><?php echo $employeeEmail ?></span></a>
                                             </h2>
                                         </td>
