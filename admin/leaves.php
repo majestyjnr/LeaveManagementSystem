@@ -193,7 +193,7 @@ while($row = mysqli_fetch_array($query_run)){
                                                 } else if($status == 'Approved'){
                                             ?>
                                                     <a class="custom-badge status-green" >
-                                                        Declined
+                                                        Approved
                                                     </a>
                                             <?php
 
@@ -204,9 +204,8 @@ while($row = mysqli_fetch_array($query_run)){
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.php"><i class="fa fa-save m-r-5"></i> Approve</a>
-                                                    <a class="dropdown-item" href="edit-leave.php"><i class="fa fa-close m-r-5"></i> Disapprove</a>
-                                                    <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                    <a class="dropdown-item" href="approve.php?id=<?php echo $id ?>" style="cursor: pointer"><i class="fa fa-save m-r-5"></i> Approve</a>
+                                                    <a class="dropdown-item" href="disapprove.php?id=<?php echo $id ?>" style="cursor: pointer"><i class="fa fa-close m-r-5"></i> Disapprove</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -221,13 +220,27 @@ while($row = mysqli_fetch_array($query_run)){
                 </div>
             </div>
         </div>
-		<div id="delete_approve" class="modal fade delete-modal" role="dialog">
+
+        <div id="delete_approve" class="modal fade delete-modal" role="dialog">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-body text-center">
 						<img src="../assets/img/sent.png" alt="" width="50" height="46">
 						<h3>Are you sure want to delete this Leave Request?</h3>
-						<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+						<div class="m-t-20"> <a href="" class="btn btn-white" data-dismiss="modal">Close</a>
+							<button type="submit" class="btn btn-danger">Delete</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div id="delete_approve" class="modal fade delete-modal" role="dialog">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body text-center">
+						<img src="../assets/img/sent.png" alt="" width="50" height="46">
+						<h3>Are you sure want to delete this Leave Request?</h3>
+						<div class="m-t-20"> <a href="" class="btn btn-white" data-dismiss="modal">Close</a>
 							<button type="submit" class="btn btn-danger">Delete</button>
 						</div>
 					</div>

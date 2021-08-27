@@ -95,9 +95,9 @@ $phone = $row['phone'];
                         <h4 class="page-title">Staff Profile</h4>
                     </div>
 
-                    <div class="col-sm-5 col-6 text-right m-b-30">
+                    <!-- <div class="col-sm-5 col-6 text-right m-b-30">
                         <a href="edit-profile.php" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Edit Profile</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="card-box profile-header">
                     <div class="row">

@@ -68,6 +68,80 @@ $email = $_SESSION['adminemail'];
                 </div>
             </div>
         </div>
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                     <div class="col-sm-8 col-6">
+                        <h4 class="page-title">Welcome <span style="color: blue"><?php echo $name ?></span>!</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+							<span class="dash-widget-bg1"><i class="fa fa-table" aria-hidden="true"></i></span>
+							<div class="dash-widget-info text-right">
+                                <?php 
+                                // GET Approved REQUESTS
+                                $query = "SELECT status FROM leaves WHERE `status` = 'Approved'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $ApprovedTotal = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $ApprovedTotal ?></h3>
+								
+								<span class="widget-title1">Approved Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg2"><i class="fa fa-table"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <?php 
+                                // GET Approved REQUESTS
+                                $query = "SELECT status FROM leaves WHERE `status` = 'Declined'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $declinedTotal = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $declinedTotal ?></h3>
+                                <span class="widget-title2">Declined Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg3"><i class="fa fa-table" aria-hidden="true"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <?php 
+                                // GET All Leaves
+                                $query = "SELECT * FROM leaves";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $AllLeaves = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $AllLeaves ?></h3>
+                                <span class="widget-title3">All Leave Requests <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <center>
+                <img src="../assets/img/mj.jpg" alt="" width="80%">
+                </center>
+            </div>
+        </div>
     	
 	</div>
     <div class="sidebar-overlay" data-reff=""></div>
