@@ -109,13 +109,13 @@ if($password != $confirmPassword){
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                     <li class="menu-title">Main</li>
-                        <li class="active">
+                        <li>
                             <a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li>
                             <a href="admins.php"><i class="fa fa-users"></i> <span></span>Admins</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="employees.php"><i class="fa fa-users"></i> <span>Employees</span></a>
                         </li>
                         <li>
