@@ -88,16 +88,11 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     <?php
     if($error == 'invalid'){
         echo "<script>
-    
-           
             iziToast.error({
                 title: 'Error!',
                 message: 'Invalid credentials provided',
                 position: 'topRight'
               });
-            
-
-        
             </script>";
     }
     ?>
