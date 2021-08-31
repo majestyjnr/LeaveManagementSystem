@@ -63,7 +63,7 @@ $email = $_SESSION['adminemail'];
                             <a href="employees.php"><i class="fa fa-users"></i> <span>Employees</span></a>
                         </li>
                         <li>
-                            <a href="all-leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
+                            <a href="leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
                         </li>
                     </ul>
                 </div>

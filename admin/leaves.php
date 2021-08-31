@@ -14,10 +14,13 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/izitoast/css/iziToast.min.css">
+
 </head>
 <?php 
 include "../db/connection.php";
 session_start();
+@$msg = $_GET['s'];
 $name = $_SESSION['adminfirstname'];
 $email = $_SESSION['adminemail'];
 ?>
@@ -260,6 +263,27 @@ while($row = mysqli_fetch_array($query_run)){
     <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/data-table.js"></script>
+    <script src="../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+        if($msg == '0'){
+            echo "<script>
+            iziToast.warning({
+                title: 'Success!',
+                message: 'The leave has been disapproved successfully',
+                position: 'bottomRight'
+              });
+             </script>";
+        } elseif($msg == '1'){
+            echo "<script>
+            iziToast.success({
+                title: 'Success!',
+                message: 'The leave has been approved successfully',
+                position: 'bottomRight'
+              });
+             </script>";
+        }
+    ?>
+
 </body>
 
 

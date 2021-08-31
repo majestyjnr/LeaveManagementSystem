@@ -10,7 +10,7 @@ $query = "UPDATE leaves SET status='Declined' WHERE id='$id'";
 $query_run = mysqli_query($link, $query);
 
 if($query_run){
-    header("location: leaves.php?s=".urlencode('1')."");
+    header("location: leaves.php?s=".urlencode('0')."");
 }
 
 ?>
