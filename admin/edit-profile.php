@@ -53,7 +53,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['user
     $query_run = mysqli_query($link, $query);
 
     if($query_run){
-        header("location: leaves.php");
+        header("location: dashboard.php");
     }
 }
 
