@@ -119,8 +119,6 @@ $email = $_SESSION['adminemail'];
                                         <th>Employee ID</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
-                                        <th style="min-width: 110px;">Join Date</th>
-                                        <th>Role</th>
                                         <th class="text-right">Action</th>
                                     </tr>
                                 </thead>
@@ -154,15 +152,10 @@ while($row = mysqli_fetch_array($query_run)){
                                         <td>E-000<?php echo $id; ?></td>
                                         <td><?php echo $email; ?></td>
                                         <td><?php echo $phone; ?></td>
-                                        <td><?php echo $joining_date; ?></td>
-                                        <td>
-                                            <span class="custom-badge status-green"><?php echo $role; ?></span>
-                                        </td>
                                         <td class="text-right">
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-employee.php"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                 </div>
                                             </div>
