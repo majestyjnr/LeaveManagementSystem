@@ -72,9 +72,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" required>
                         </div>
-                        <div class="form-group text-right">
-                            <a href="employee_forgot-password.php">Forgot your password?</a>
-                        </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary account-btn">Login</button>
                         </div>

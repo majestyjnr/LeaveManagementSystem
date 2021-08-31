@@ -25,13 +25,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             header('location: ../../admin/dashboard.php');
         }else{
             
-            echo "<script>
-    
-            alert('Invalid Credentials');
-        
-            window.location.href='login.php';
-        
-            </script>";
+             $error = 'invalid';
         }
 
 
@@ -53,6 +47,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/izitoast/css/iziToast.min.css">
+
 </head>
 
 <body>
@@ -73,9 +69,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                             <label>Password</label>
                             <input type="password"  name="password" class="form-control" required>
                         </div>
-                        <div class="form-group text-right">
-                            <a href="admin_forgot-password.php">Forgot your password?</a>
-                        </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary account-btn">Login</button>
                         </div>
@@ -91,6 +84,23 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 	<script src="../../assets/js/popper.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
     <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+    if($error == 'invalid'){
+        echo "<script>
+    
+           
+            iziToast.error({
+                title: 'Error!',
+                message: 'Invalid credentials provided',
+                position: 'topRight'
+              });
+            
+
+        
+            </script>";
+    }
+    ?>
 </body>
 
 </html>
