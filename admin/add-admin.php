@@ -2,7 +2,7 @@
 include "../db/connection.php";
 session_start();
 $name = $_SESSION['adminfirstname'];
-$email = $_SESSION['adminemail'];
+$adminemail = $_SESSION['adminemail'];
 
 
 if(isset($_POST['password']) && isset($_POST['confirmPassword'])) {
@@ -22,7 +22,7 @@ if($password != $confirmPassword){
 } else{
 
     
-    $query="INSERT INTO admins (firstname,lastname,username,email,password,phone,role) values ('$firstname','$lastname','$username','$email','$password','$phone','$role')";
+    $query="INSERT INTO admins (firstname,lastname,username,email,password,phone) values ('$firstname','$lastname','$username','$email','$password','$phone')";
     $query_run = mysqli_query($link,$query);
 
     if ($query_run) {
@@ -32,7 +32,7 @@ if($password != $confirmPassword){
     }else{
 
         @$error = 'error';
-        
+
     }
 
     }
@@ -79,7 +79,7 @@ if($password != $confirmPassword){
 							<img class="rounded-circle" src="../assets/img/account.png" width="24" alt="Admin">
 							<span class="status online"></span>
 						</span>
-						<span><?php echo $email ?></span>
+						<span><?php echo $adminemail ?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.php">My Profile</a>
