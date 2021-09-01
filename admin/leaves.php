@@ -175,33 +175,6 @@ while($row = mysqli_fetch_array($query_run)){
                 </div>
             </div>
         </div>
-
-        <div id="delete_approve" class="modal fade delete-modal" role="dialog">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body text-center">
-						<img src="../assets/img/sent.png" alt="" width="50" height="46">
-						<h3>Are you sure want to delete this Leave Request?</h3>
-						<div class="m-t-20"> <a href="" class="btn btn-white" data-dismiss="modal">Close</a>
-							<button type="submit" class="btn btn-danger">Delete</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        <div id="delete_approve" class="modal fade delete-modal" role="dialog">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body text-center">
-						<img src="../assets/img/sent.png" alt="" width="50" height="46">
-						<h3>Are you sure want to delete this Leave Request?</h3>
-						<div class="m-t-20"> <a href="" class="btn btn-white" data-dismiss="modal">Close</a>
-							<button type="submit" class="btn btn-danger">Delete</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
     </div>
     <div class="sidebar-overlay" data-reff=""></div>
     <script src="../assets/js/jquery-3.2.1.min.js"></script>
@@ -217,7 +190,7 @@ while($row = mysqli_fetch_array($query_run)){
     <script src="../assets/js/data-table.js"></script>
     <script src="../assets/izitoast/js/iziToast.min.js"></script>
     <?php
-        if($msg == '0'){
+        if(@$msg == '0'){
             echo "<script>
             iziToast.warning({
                 title: 'Success!',
@@ -225,7 +198,7 @@ while($row = mysqli_fetch_array($query_run)){
                 position: 'bottomRight'
               });
              </script>";
-        } elseif($msg == '1'){
+        } elseif(@$msg == '1'){
             echo "<script>
             iziToast.success({
                 title: 'Success!',

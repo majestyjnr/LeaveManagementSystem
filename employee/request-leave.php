@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/izitoast/css/iziToast.min.css">
 </head>
 
 <?php
@@ -33,22 +34,12 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
 
     if ($query_run) {
         
-        echo "<script>
-    
-        alert('Leave Request Submitted Successfully');
-
-        window.location.href='dashboard.php';
-
-        </script>";
-
+        @$success = 'success';
+  
     }else{
-        echo "<script>
-    
-        alert('Error submitting data');
 
-        window.location.href='request-leave.php';
-
-        </script>";
+        @$error = 'error';
+        
     }
 
 }
@@ -167,8 +158,26 @@ if(isset($_POST['leavetype']) && isset($_POST['duration']) && isset($_POST['star
 	<script src="../assets/js/moment.min.js"></script>
 	<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+        if(@$success == 'success'){
+            echo "<script>
+            iziToast.success({
+                title: 'Success!',
+                message: 'Leave request submitted successfully',
+                position: 'bottomRight'
+              });
+             </script>";
+        } elseif(@$error == 'error'){
+            echo "<script>
+            iziToast.error({
+                title: 'Error!',
+                message: 'Error submitting leave request',
+                position: 'bottomRight'
+              });
+             </script>";
+        }
+    ?>
 </body>
 
-
-<!-- add-leave24:07-->
 </html>

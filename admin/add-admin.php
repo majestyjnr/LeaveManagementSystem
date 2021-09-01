@@ -30,7 +30,9 @@ if($password != $confirmPassword){
         @$success = 'success';
   
     }else{
+
         @$error = 'error';
+        
     }
 
     }

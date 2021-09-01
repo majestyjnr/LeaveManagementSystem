@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
     <title>My Leaves | Majesty Corporation LMS</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
@@ -12,10 +12,12 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/izitoast/css/iziToast.min.css">
 </head>
 <?php 
 include "../db/connection.php";
 session_start();
+@$msg = $_GET['s'];
 $name = $_SESSION['firstname'];
 $email = $_SESSION['email'];
 
@@ -74,49 +76,6 @@ $email = $_SESSION['email'];
                     </div>
                     <div class="col-sm-4 col-6 text-right m-b-30">
                         <a href="request-leave.php" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Leave</a>
-                    </div>
-                </div>
-                <div class="row filter-row">
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus select-focus">
-                            <label class="focus-label">Leave Type</label>
-                            <select class="select floating">
-                                <option> -- Select -- </option>
-                                <option>Casual Leave</option>
-                                <option>Medical Leave</option>
-                                <option>Loss of Pay</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus select-focus">
-                            <label class="focus-label">Leave Status</label>
-                            <select class="select floating">
-                                <option> -- Select -- </option>
-                                <option> Pending </option>
-                                <option> Approved </option>
-                                <option> Rejected </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus">
-                            <label class="focus-label">From</label>
-                            <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus">
-                            <label class="focus-label">To</label>
-                            <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-4 col-12">
-                        <a href="#" class="btn btn-success btn-block"> Search </a>
                     </div>
                 </div>
                 <div class="row">
@@ -193,8 +152,7 @@ while($row = mysqli_fetch_array($query_run)){
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-leave.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" title="Decline" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                    <a class="dropdown-item" href="delete.php?id=<?php echo $id ?>" title="Decline"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -235,6 +193,18 @@ while($row = mysqli_fetch_array($query_run)){
     <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../../js/data-table.js"></script>
+    <script src="../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+        if(@$msg == '0'){
+            echo "<script>
+            iziToast.success({
+                title: 'Success!',
+                message: 'The leave has been deleted successfully',
+                position: 'bottomRight'
+              });
+            </script>";
+        }
+    ?>
 </body>
 
 

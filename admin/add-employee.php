@@ -24,7 +24,7 @@ if($password != $confirmPassword){
 } else{
 
     
-    $query="INSERT INTO employees (firstname,lastname,username,email,password,joining_date,phone,role) values ('$firstname','$lastname','$username','$email','$password','$joining_date','$phone','$role')";
+    $query="INSERT INTO employees (firstname,lastname,username,email,password,phone) values ('$firstname','$lastname','$username','$email','$password','$phone')";
     $query_run = mysqli_query($link,$query);
 
     if ($query_run) {

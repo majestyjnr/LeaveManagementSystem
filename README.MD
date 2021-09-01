@@ -1,6 +1,7 @@
 # Employee Leave Management System
 
-## Written in PHP and still under development
+## Written in PHP 
+## Development complete
 
 
 **INSTALLATION PROCEDURE**
