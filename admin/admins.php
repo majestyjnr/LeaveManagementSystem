@@ -113,7 +113,7 @@ while($row = mysqli_fetch_array($query_run)){
     $lastname = $row['lastname'];
     $email = $row['email'];
     $phone = $row['phone'];
-    $role = $row['role'];
+
 
 ?>
 

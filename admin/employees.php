@@ -14,10 +14,13 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/izitoast/css/iziToast.min.css">
+
 </head>
 <?php 
 include "../db/connection.php";
 session_start();
+@$msg = $_GET['s'];
 $name = $_SESSION['adminfirstname'];
 $email = $_SESSION['adminemail'];
 ?>
@@ -109,7 +112,6 @@ while($row = mysqli_fetch_array($query_run)){
     $lastname = $row['lastname'];
     $username = $row['username'];
     $email = $row['email'];
-    $joining_date = $row['joining_date'];
     $phone = $row['phone'];
 
 ?>
@@ -125,7 +127,7 @@ while($row = mysqli_fetch_array($query_run)){
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                    <a class="dropdown-item" href="delete-employee.php?id=<?php echo $id ?>"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -166,6 +168,18 @@ while($row = mysqli_fetch_array($query_run)){
     <script src="../assets/js/moment.min.js"></script>
     <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+        if(@$msg == '0'){
+            echo "<script>
+            iziToast.success({
+                title: 'Success!',
+                message: 'Employee deleted successfully',
+                position: 'bottomRight'
+              });
+             </script>";
+        }
+    ?>
 </body>
 
 
