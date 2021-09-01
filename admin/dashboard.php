@@ -77,7 +77,26 @@ $email = $_SESSION['adminemail'];
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                        <div class="dash-widget">
+                            <span class="dash-widget-bg2"><i class="fa fa-table"></i></span>
+                            <div class="dash-widget-info text-right">
+                                <?php 
+                                // GET Approved REQUESTS
+                                $query = "SELECT status FROM leaves WHERE `status` = 'Pending'";
+
+                                // Execute query
+                                $query_run = mysqli_query($link, $query);
+
+                                $declinedTotal = mysqli_num_rows($query_run);
+
+                                ?>
+                                <h3><?php echo $declinedTotal ?></h3>
+                                <span class="widget-title2">Pending Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                         <div class="dash-widget">
 							<span class="dash-widget-bg1"><i class="fa fa-table" aria-hidden="true"></i></span>
 							<div class="dash-widget-info text-right">
@@ -97,9 +116,9 @@ $email = $_SESSION['adminemail'];
 							</div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                         <div class="dash-widget">
-                            <span class="dash-widget-bg2"><i class="fa fa-table"></i></span>
+                            <span class="dash-widget-bg4"><i class="fa fa-table"></i></span>
                             <div class="dash-widget-info text-right">
                                 <?php 
                                 // GET Approved REQUESTS
@@ -112,11 +131,11 @@ $email = $_SESSION['adminemail'];
 
                                 ?>
                                 <h3><?php echo $declinedTotal ?></h3>
-                                <span class="widget-title2">Declined Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
+                                <span class="widget-title4">Declined Leaves <i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                         <div class="dash-widget">
                             <span class="dash-widget-bg3"><i class="fa fa-table" aria-hidden="true"></i></span>
                             <div class="dash-widget-info text-right">

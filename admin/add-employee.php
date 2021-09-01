@@ -15,21 +15,11 @@ if(isset($_POST['password'])&& isset($_POST['confirmPassword'])) {
     $email= $_POST['email'];
     $password= $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
-    $joining_date = $_POST['joining_date'];
     $phone = $_POST['phone'];
-    $role = $_POST['role'];
     
 if($password != $confirmPassword){
     
-    echo "<script>
-    
-    alert('Password mismatch. please try again..');
-
-    window.location.href='add-employee.php';
-
-  </script>";
-
-    
+    @$passwordmismatch = 'mismatch';
     
 } else{
 
@@ -38,17 +28,9 @@ if($password != $confirmPassword){
     $query_run = mysqli_query($link,$query);
 
     if ($query_run) {
-        
-        echo "<script>
-    
-    alert('Registered successfully');
-
-    window.location.href='employees.php';
-
-  </script>";
-  
+        @$success = 'success';
     }else{
-        echo 'Error registering. Please try again.';
+        @$error = 'error';
     }
 
     
@@ -62,8 +44,6 @@ if($password != $confirmPassword){
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- add-employee24:07-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -74,6 +54,8 @@ if($password != $confirmPassword){
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/izitoast/css/iziToast.min.css">
+
 </head>
 
 <body>
@@ -172,28 +154,10 @@ if($password != $confirmPassword){
                                     <input class="form-control" name="confirmPassword" type="password" required>
                                 </div>
                             </div>
-                        
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Joining Date <span class="text-danger">*</span></label>
-                                    <div class="cal-icon">
-                                        <input class="form-control datetimepicker" name="joining_date" type="text" required>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Phone </label>
                                     <input class="form-control" name="phone" type="text" required> 
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Role</label>
-                                    <select class="select" name="role" required>
-                                        <option value="admin" name="admin">Admin</option>
-                                        <option value="employee" name="employee">Employee</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -213,9 +177,33 @@ if($password != $confirmPassword){
     <script src="../assets/js/app.js"></script>
 	<script src="../assets/js/moment.min.js"></script>
 	<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
-	
+    <script src="../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+        if(@$passwordmismatch == 'mismatch'){
+            echo "<script>
+            iziToast.error({
+                title: 'Error!',
+                message: 'The passwords do not match',
+                position: 'bottomRight'
+            });
+            </script>";
+        }elseif(@$success == 'success'){
+            echo "<script>
+            iziToast.success({
+                title: 'Success!',
+                message: 'Employee registered successfully',
+                position: 'bottomRight'
+              });
+             </script>";
+        } elseif(@$error == 'error'){
+            echo "<script>
+            iziToast.error({
+                title: 'Error!',
+                message: 'Error registering employee',
+                position: 'bottomRight'
+              });
+             </script>";
+        }
+    ?>
     </body>
-
-
-<!-- add-employee24:07-->
 </html>

@@ -14,20 +14,10 @@ if(isset($_POST['password']) && isset($_POST['confirmPassword'])) {
     $password= $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     $phone = $_POST['phone'];
-    $role = $_POST['role'];
     
 if($password != $confirmPassword){
     
-    
-    echo "<script>
-    
-    alert('Password Mismatch');
-
-    window.location.href='add-admin.php';
-
-  </script>";
-
-    
+    @$passwordmismatch = 'mismatch';
     
 } else{
 
@@ -37,16 +27,10 @@ if($password != $confirmPassword){
 
     if ($query_run) {
         
-        echo "<script>
-    
-    alert('Registered successfully');
-
-    window.location.href='dashboard.php';
-
-    </script>";
+        @$success = 'success';
   
     }else{
-        echo 'Error registering. Please try again.';
+        @$error = 'error';
     }
 
     }
@@ -61,8 +45,6 @@ if($password != $confirmPassword){
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- add-employee24:07-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -73,6 +55,8 @@ if($password != $confirmPassword){
     <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/izitoast/css/iziToast.min.css">
+
 </head>
 
 <body>
@@ -194,8 +178,33 @@ if($password != $confirmPassword){
     <script src="../assets/js/app.js"></script>
 	<script src="../assets/js/moment.min.js"></script>
 	<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
-	
+    <script src="../assets/izitoast/js/iziToast.min.js"></script>
+    <?php
+        if(@$passwordmismatch == 'mismatch'){
+            echo "<script>
+            iziToast.error({
+                title: 'Error!',
+                message: 'The passwords do not match',
+                position: 'bottomRight'
+            });
+            </script>";
+        }elseif(@$success == 'success'){
+            echo "<script>
+            iziToast.success({
+                title: 'Success!',
+                message: 'Admin registered successfully',
+                position: 'bottomRight'
+              });
+             </script>";
+        } elseif(@$error == 'error'){
+            echo "<script>
+            iziToast.error({
+                title: 'Error!',
+                message: 'Error registering admin',
+                position: 'bottomRight'
+              });
+             </script>";
+        }
+    ?>
 </body>
-
-
 </html>

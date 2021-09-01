@@ -2,7 +2,7 @@
 include "../db/connection.php";
 session_start();
 
-$id = $_GET['id'];
+@$id = $_GET['id'];
 
 $query = "UPDATE leaves SET status='Approved' WHERE id='$id'";
 

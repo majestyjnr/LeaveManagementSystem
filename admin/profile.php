@@ -54,15 +54,18 @@ $email = $_SESSION['adminemail'];
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
-                        <li class="menu-title">Main</li>
+                    <li class="menu-title">Main</li>
                         <li>
                             <a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
-						<li>
-                            <a href="request-leave.php"><i class="fa fa-user-md"></i> <span>Request Leave</span></a>
+                        <li>
+                            <a href="admins.php"><i class="fa fa-users"></i> <span></span>Admins</a>
                         </li>
                         <li>
-                            <a href="leaves.php"><i class="fa fa-wheelchair"></i> <span>All Leaves</span></a>
+                            <a href="employees.php"><i class="fa fa-users"></i> <span>Employees</span></a>
+                        </li>
+                        <li>
+                            <a href="leaves.php"><i class="fa fa-user-md"></i> <span>Leaves</span></a>
                         </li>
                     </ul>
                 </div>

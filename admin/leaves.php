@@ -79,55 +79,7 @@ $email = $_SESSION['adminemail'];
                         <h4 class="page-title">Leave Requests</h4>
                     </div>
                 </div>
-                <div class="row filter-row">
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus">
-                            <label class="focus-label">Employee Name</label>
-                            <input type="text" class="form-control floating">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus select-focus">
-                            <label class="focus-label">Leave Type</label>
-                            <select class="select floating">
-                                <option> -- Select -- </option>
-                                <option>Casual Leave</option>
-                                <option>Medical Leave</option>
-                                <option>Loss of Pay</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus select-focus">
-                            <label class="focus-label">Leave Status</label>
-                            <select class="select floating">
-                                <option> -- Select -- </option>
-                                <option> Pending </option>
-                                <option> Approved </option>
-                                <option> Rejected </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus">
-                            <label class="focus-label">From</label>
-                            <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <div class="form-group form-focus">
-                            <label class="focus-label">To</label>
-                            <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
-                        <a href="#" class="btn btn-success btn-block"> Search </a>
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
