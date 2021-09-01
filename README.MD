@@ -14,7 +14,7 @@
 
 3. Create a database called **lms**.
 
-4. Import the **sql file** in the **db folder** of the extracted file into the newly created database.
+4. Import the **sql file** named **lms.sql** in the **db folder** of the extracted file into the newly created database.
 
 5. *Run the system in your browser*
 
