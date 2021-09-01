@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 11:31 PM
+-- Generation Time: Sep 01, 2021 at 12:32 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -35,21 +35,19 @@ CREATE TABLE `admins` (
   `username` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `role` varchar(20) NOT NULL
+  `phone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `phone`, `role`) VALUES
-(1, 'Matthew', 'Afeawo', 'slurry', 'matthewafeawo22@gmail.com', '123', '0556023022', 'admin'),
-(3, 'John', 'Paul', 'Majesty', 'johndoe22@gmail.com', '123', '+1 02556036088', 'admin'),
-(4, 'Nicholas', 'Asare', 'lahm', 'nicholasare@gmail.com', '111', '0246987545', 'admin'),
-(5, 'Bismark', 'Tetteh', 'cocoflex', 'bismarktetteh@gmail.com', '000', '0247893369', 'admin'),
-(6, 'Solomon', 'Aidoo Jnr', 'Majesty', 'aidoojuniorsolomon@gmail.com', 'Majesty1@', '0574321997', 'admin'),
-(7, 'Default ', 'Admin', 'DefaultAdmin', 'admin@gmail.com', 'admin1', '0544148747', 'admin');
+INSERT INTO `admins` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `phone`) VALUES
+(1, 'Matthew', 'Afeawo', 'slurry', 'matthewafeawo22@gmail.com', '123', '0556023022'),
+(4, 'Nicholas', 'Asare', 'lahm', 'nicholasare@gmail.com', '111', '0246987545'),
+(5, 'Bismark', 'Tetteh', 'cocoflex', 'bismarktetteh@gmail.com', '000', '0247893369'),
+(6, 'Solomon', 'Aidoo Jnr', 'Majesty', 'aidoojuniorsolomon@gmail.com', 'Majesty1@', '0574321997'),
+(8, 'Default', 'Admin', 'Default Admin', 'defaultadmin@gmail.com', 'admin', '0514141611');
 
 -- --------------------------------------------------------
 
@@ -64,19 +62,18 @@ CREATE TABLE `employees` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `joining_date` varchar(20) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `role` varchar(20) NOT NULL
+  `phone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `joining_date`, `phone`, `role`) VALUES
-(2, 'Joseph', 'Banfo', 'joseph', 'josephbanfo@gmail.com', '123', '05/07/2021', '0261478955', 'employee'),
-(3, 'Solomon', 'Aidoo Jnr', 'Majesty', 'developermajesty@gmail.com', 'Majesty1@', '16/08/2021', '0574321997', 'employee'),
-(4, 'Default Staff', 'Staff', 'DefaultStaff', 'staff@gmail.com', 'staff1', '16/08/2021', '0544148747', 'employee');
+INSERT INTO `employees` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `phone`) VALUES
+(2, 'Jeremiah', 'Banfo', 'jere', 'dejeremiah@gmail.com', '123', '0261478955'),
+(3, 'Solomon', 'Aidoo Jnr', 'Majesty', 'developermajesty@gmail.com', 'Majesty1@', '0574321997'),
+(4, 'Olando', 'Boll', 'DefaultStaff', 'sirolando@gmail.com', 'staff1', '0544148747'),
+(5, 'Default', 'Staff', 'Default Staff', 'defaultstaff@gmail.com', 'staff', '0574321997');
 
 -- --------------------------------------------------------
 
@@ -101,9 +98,10 @@ CREATE TABLE `leaves` (
 --
 
 INSERT INTO `leaves` (`id`, `employeeName`, `employeeEmail`, `leaveType`, `startDate`, `endDate`, `duration`, `reason`, `status`) VALUES
-(1, 'Olando', 'olandoboll@gmail.com', 'Casual Leave', '5', '23/08/2021', 27, 'Dubai', 'Pending'),
-(2, 'Jeremiah', 'dejeremiah@gmail.com', 'Casual Leave', '2', '23/08/2021', 24, 'Vacation', 'Pending'),
-(3, 'Solomon', 'developermajesty@gmail.com', 'Casual Leave', '10', '23/08/2021', 1, 'Vacation Holiday', 'Pending');
+(1, 'Olando', 'sirolando@gmail.com', 'Casual Leave', '20/08/2021', '23/08/2021', 3, 'Dubai', 'Declined'),
+(2, 'Jeremiah', 'dejeremiah@gmail.com', 'Casual Leave', '23/08/2021', '25/08/2021', 2, 'Vacation', 'Pending'),
+(3, 'Solomon', 'developermajesty@gmail.com', 'Casual Leave', '18/08/2021', '28/08/2021', 10, 'Vacation Holiday', 'Declined'),
+(4, 'Solomon', 'developermajesty@gmail.com', 'Casual Leave', '15/08/2021', '30/08/2021', 15, 'I want to travel to Germany for an appointment with the prime minister.', 'Approved');
 
 --
 -- Indexes for dumped tables
@@ -135,19 +133,19 @@ ALTER TABLE `leaves`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `leaves`
 --
 ALTER TABLE `leaves`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

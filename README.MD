@@ -22,12 +22,12 @@
 **DEFAULT CREDENTIALS**
 1. ADMIN
 
-`email:      admin@gmail.com`
-`password:   admin1`
+`email:      defaultadmin@gmail.com`
+`password:   admin`
 
 
 2. Employee
 
-`email:      staff@gmail.com`
-`password:   staff1`
+`email:      defaultstaff@gmail.com`
+`password:   staff`
 
