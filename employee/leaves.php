@@ -141,7 +141,7 @@ while($row = mysqli_fetch_array($query_run)){
                                                 } else if($status == 'Approved'){
                                             ?>
                                                     <a class="custom-badge status-green" >
-                                                        Declined
+                                                        Approved
                                                     </a>
                                             <?php
 
